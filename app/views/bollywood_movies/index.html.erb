@@ -1,0 +1,23 @@
+<h1>Listing bollywood_movies</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bollywood_movies.each do |bollywood_movie| %>
+  <tr>
+    <td><%= bollywood_movie.name %></td>
+    <td><%= link_to 'Show', bollywood_movie %></td>
+    <td><%= link_to 'Edit', edit_bollywood_movie_path(bollywood_movie) %></td>
+    <td><%= link_to 'Destroy', bollywood_movie, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bollywood movie', new_bollywood_movie_path %>
